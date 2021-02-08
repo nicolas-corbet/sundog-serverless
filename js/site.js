@@ -27,7 +27,7 @@ var ChatApp = window.ChatApp || {};
   };
 
   ChatApp.loadChat = function () {
-    $.get("data/conversations/" + location.hash.substring(1) + ".json").done(
+    $.get(apiEndpoint + "/conversations/" + location.hash.substring(1)).done(
       function (result) {
         result.messages.forEach(function (message) {
           var panel = $('<div class="panel">');
